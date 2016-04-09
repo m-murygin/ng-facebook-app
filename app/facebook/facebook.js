@@ -22,9 +22,17 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
     js = d.createElement(s); js.id = id;
     js.src = '//connect.facebook.net/en_US/sdk.js';
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'))
+  }(document, 'script', 'facebook-jssdk'));
 })
 
-.controller('FacebookCtrl', ['$scope', function($scope){
-  
+.controller('FacebookCtrl', ['$scope', '$facebook', function($scope, $facebook){
+  $scope.isLoggedIn = false;
+
+  $scope.login = function () {
+    $facebook
+      .login()
+      .then(function () {
+        console.log('LOGGED IN');
+      });
+  };
 }]);
