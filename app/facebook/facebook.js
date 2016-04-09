@@ -51,11 +51,20 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
         $scope.welcomeMsg = 'Welcome ' + response.name;
         $scope.userInfo = response;
         $scope.isLoggedIn = true;
+
+        return $facebook.api('/me/picture');
       })
-      .catch(function (err) {
+      .then(function (response) {
+        $scope.picture = response.data.url;
+
+        return $facebook.api('/me/permissions'); 
+      })
+      .then(function(permissions) {
+          $scope.permissions = permissions;
+      })
+      .catch(function () {
         $scope.isLoggedIn = false;
         $scope.welcomeMsg = 'Please Log In';
-        console.error(err);
       });
   }
 }]);

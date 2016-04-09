@@ -5,6 +5,9 @@
       <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
     </div>
     <div ng-if="isLoggedIn">
+      <a href="{{userinfo.link}}">
+        <img ng-src="{{picture}}" ng-show="picture">
+      </a>
       <button type="button" class="btn btn-primary" ng-click="logout()">Logout</button>
     </div>
     <br>
@@ -21,10 +24,12 @@
       </ul>
     </div>
     <br>
-    <div class="well">
+    <div class="well" ng-show="isLoggedIn">
       <h4>Permissions</h4>
       <ul>
-        <li></li>
+        <li ng-repeat="permission in permissions">
+          {{permission.permission}} - {{permission.status}}
+        </li>
       </ul>
     </div>
   </div>
