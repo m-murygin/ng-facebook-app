@@ -63,7 +63,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
       })
       .then(function(permissions) {
         console.log('permissions', permissions);
-        $scope.permissions = permissions;
+        $scope.permissions = permissions.data;
 
       })
       .catch(function () {
