@@ -26,13 +26,37 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
 })
 
 .controller('FacebookCtrl', ['$scope', '$facebook', function($scope, $facebook){
-  $scope.isLoggedIn = false;
+  refresh();
 
   $scope.login = function () {
     $facebook
       .login()
       .then(function () {
-        console.log('LOGGED IN');
+        refresh();
       });
   };
+
+  $scope.logout = function () {
+    $facebook
+      .logout()
+      .then(function () {
+        refresh();
+      });
+  };
+
+  function refresh() {
+    $facebook
+      .api('/me')
+      .then(
+        function (response) {
+          $scope.welcomeMsg = 'Welcome ' + response.name;
+          $scope.userInfo = response;
+          $scope.isLoggedIn = true;
+        }, 
+        function (err) {
+          $scope.isLoggedIn = false;
+          $scope.welcomeMsg = 'Please Log In';
+          console.error(err);
+        });
+  }
 }]);
