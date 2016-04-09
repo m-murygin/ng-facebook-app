@@ -1,19 +1,23 @@
 <div class="row">
   <div class="col-md-4">
     <h4>{{welcomeMsg}}</h4>
-    <button type="button" class="btn btn-success" ng-click="login()">Login</button>
-    <button type="button" class="btn btn-primary" ng-click="logout()">Logout</button>
+    <div ng-if="!isLoggedIn">
+      <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
+    </div>
+    <div ng-if="isLoggedIn">
+      <button type="button" class="btn btn-primary" ng-click="logout()">Logout</button>
+    </div>
     <br>
     <br>
-    <div class="well">
+    <div class="well" ng-show="isLoggedIn">
       <h4>User Info</h4>
       <ul>
-        <li>ID: Some Id</li>
-        <li>First Name: John</li>
-        <li>Last Name: Doe</li>
-        <li>Email Name: john@gmail.com</li>
-        <li>Gender: male</li>
-        <li>Locale: enGB</li>
+        <li>ID: {{userinfo.id}}</li>
+        <li>First Name: {{userinfo.first_name}}</li>
+        <li>Last Name: {{userinfo.last_name}}</li>
+        <li>Email Name: {{userinfo.email}}</li>
+        <li>Gender: {{userinfo.gender}}</li>
+        <li>Locale: {{userinfo.locale}}</li>
       </ul>
     </div>
     <br>
