@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    <div ng-view></div>
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Please Log In</h4>
+        <button type="button" class="btn btn-default">Login</button>
+        <br>
+        <br>
+        <div class="well">
+          <h4>User Info</h4>
+          <ul>
+            <li>ID: Some Id</li>
+            <li>First Name: John</li>
+            <li>Last Name: Doe</li>
+            <li>Email Name: john@gmail.com</li>
+            <li>Gender: male</li>
+            <li>Locale: enGB</li>
+          </ul>
+        </div>
+        <br>
+        <div class="well">
+          <h4>Permissions</h4>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h3>Welcome to Facebook!</h3>
+        <form>
+          <div class="form-group">
+            <label for="">Status Update</label>
+            <textarea class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>  
+
+  <script src="components/jquery/dist/jquery.js"></script>
+  <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="components/angular/angular.js"></script>
+  <script src="components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="facebook/facebook.js"></script>
+</body>
+</html>
