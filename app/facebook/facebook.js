@@ -57,10 +57,14 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
       .then(function (response) {
         $scope.picture = response.data.url;
 
+        console.log('image', response);
+
         return $facebook.api('/me/permissions'); 
       })
       .then(function(permissions) {
-          $scope.permissions = permissions;
+        console.log('permissions', permissions);
+        $scope.permissions = permissions;
+
       })
       .catch(function () {
         $scope.isLoggedIn = false;
