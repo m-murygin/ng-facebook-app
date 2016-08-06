@@ -1,8 +1,14 @@
-App build with AngularJS and Facebook API
+# App build with AngularJS and Facebook API
 
-http://m-education.github.io/ngSocial/app/
+#### Life demo
+http://m-murygin.github.io/ngSocial/app/
 
-To run
+#### Before start
+```sh
+npm install
+```
+
+### To run
 ```
 npm start
 ```
