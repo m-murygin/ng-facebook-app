@@ -1,7 +1,7 @@
 # App build with AngularJS and Facebook API
 
 #### Life demo
-https://m-murygin.github.io/ng-facebook-app/app
+https://mmurygin.github.io/ng-facebook-app/app
 
 #### Before start
 ```sh
